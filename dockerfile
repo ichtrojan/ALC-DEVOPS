@@ -10,7 +10,7 @@ RUN docker-compose exec mongo mongo
 CMD mongo
 CMD use admin  
 
-CMD db.createUser({user: "root", pwd: "root", roles:[{role: "root", db: "admin"}]})
+CMD db.createUser({user: "root", pwd: "root", roles:[{role: "userAdminAnyDatabase", db: "admin"}]})
 
 RUN mongo -u root -p root --authenticationDatabase "admin"
 
